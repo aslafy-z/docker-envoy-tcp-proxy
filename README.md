@@ -3,3 +3,12 @@
 A simple Envoy container that templates a basic TCP proxy configuration.
 
 Find Docker image at <https://github.com/aslafy-z/docker-envoy-tcp-proxy/pkgs/container/envoy-tcp-proxy>.
+
+## Environment variables
+
+| Variable | Default | Description |
+| --- | --- | --- |
+| `BIND_ADDRESS` | `0.0.0.0` | IP address to bind to |
+| `BIND_PORT` | `443` | Port to bind to |
+| `TARGET_HOST` | - | Host to proxy to |
+| `TARGET_PORT` | - | Port to proxy to |
