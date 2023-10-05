@@ -23,7 +23,7 @@ static_resources:
       connect_timeout: 30s
       type: LOGICAL_DNS
       dns_lookup_family: V4_ONLY
-__TMPL_BEGIN_TCP_PROXY__
+__TMPL_BEGIN_PROXY_PROTOCOL__
 # https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/other_features/ip_transparency
       transport_socket:
         name: envoy.transport_sockets.upstream_proxy_protocol
@@ -35,7 +35,7 @@ __TMPL_BEGIN_TCP_PROXY__
             name: envoy.transport_sockets.raw_buffer
             typed_config:
               "@type": type.googleapis.com/envoy.extensions.transport_sockets.raw_buffer.v3.RawBuffer
-__TMPL_END_TCP_PROXY__
+__TMPL_END_PROXY_PROTOCOL__
       load_assignment:
         cluster_name: cluster_0
         endpoints:
