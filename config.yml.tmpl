@@ -24,6 +24,7 @@ static_resources:
       type: LOGICAL_DNS
       dns_lookup_family: V4_ONLY
 __TMPL_BEGIN_TCP_PROXY__
+# https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/other_features/ip_transparency
       transport_socket:
         name: envoy.transport_sockets.upstream_proxy_protocol
         typed_config:
