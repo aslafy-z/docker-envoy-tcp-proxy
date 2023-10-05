@@ -20,12 +20,12 @@ sed -i \
 
 if [ "$PROXY_PROTOCOL" = 0 ]; then
   sed -i \
-    -e '/__TMPL_BEGIN_PROXY_PROTOCOL__/,/__TMPL_END_PROXY_PROTOCOL__/d' \
+    -e "/__TMPL_BEGIN_PROXY_PROTOCOL__/,/__TMPL_END_PROXY_PROTOCOL__/d" \
     /usr/local/etc/envoy/config.yml
 else
   sed -i \
-    -e 's/__TMPL_BEGIN_PROXY_PROTOCOL__//' \
-    -e 's/__TMPL_END_PROXY_PROTOCOL__//' \
+    -e "s/__TMPL_BEGIN_PROXY_PROTOCOL__//" \
+    -e "s/__TMPL_END_PROXY_PROTOCOL__//" \
     /usr/local/etc/envoy/config.yml
 fi
 
