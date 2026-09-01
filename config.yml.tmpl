@@ -17,7 +17,6 @@ static_resources:
                   - name: envoy.access_loggers.stdout
                     typed_config:
                       "@type": type.googleapis.com/envoy.extensions.access_loggers.stream.v3.StdoutAccessLog
-
   clusters:
     - name: cluster_0
       connect_timeout: 30s
@@ -45,3 +44,10 @@ __TMPL_END_PROXY_PROTOCOL__
                     socket_address:
                       address: __TMPL_TARGET_HOST__
                       port_value: __TMPL_TARGET_PORT__
+__TMPL_BEGIN_ADMIN_ENDPOINT__
+admin:
+  address:
+    socket_address:
+      address: __TMPL_ADMIN_ADDRESS__
+      port_value: __TMPL_ADMIN_PORT__
+__TMPL_END_ADMIN_ENDPOINT__
